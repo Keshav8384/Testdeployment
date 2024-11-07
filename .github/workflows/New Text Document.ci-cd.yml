@@ -18,13 +18,13 @@ jobs:
         with:
           node-version: '16'
 
-      - name: List directory contents  # This step will help you verify paths
-        run: ls -R
+      - name: List directory contents for debugging
+        run: ls -R ./Testdeployment
 
       - name: Install dependencies
         run: npm install
-        working-directory: ./Testdeployment  # Adjust path as needed
+        working-directory: ./Testdeployment
 
       - name: Build Angular project
         run: npm run build -- --prod
-        working-directory: ./Testdeployment  # Adjust path as needed
+        working-directory: ./Testdeployment
