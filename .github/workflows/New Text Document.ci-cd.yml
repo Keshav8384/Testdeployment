@@ -29,5 +29,5 @@ jobs:
         working-directory:   # Adjust path based on your actual repo structure
 
       - name: Build Angular project
-        run: npm run build --configuration production --source-map
+        run: npm run build
         working-directory:   # Adjust path based on your actual repo structure
