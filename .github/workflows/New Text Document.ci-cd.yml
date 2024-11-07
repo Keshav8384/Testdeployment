@@ -13,18 +13,21 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Print current directory
+        run: pwd
+
+      - name: List directory contents
+        run: ls -R
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '16'
 
-      - name: List directory contents for debugging
-        run: ls -R ./Testdeployment
-
       - name: Install dependencies
         run: npm install
-        working-directory: ./Testdeployment
+        working-directory: ./Testdeployment  # Adjust path based on your actual repo structure
 
       - name: Build Angular project
         run: npm run build -- --prod
-        working-directory: ./Testdeployment
+        working-directory: ./Testdeployment  # Adjust path based on your actual repo structure
