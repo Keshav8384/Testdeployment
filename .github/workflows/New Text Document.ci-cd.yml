@@ -3,28 +3,28 @@ name: Angular CI/CD
 on:
   push:
     branches:
-      - main  # Trigger on pushes to the 'main' branch
+      - main
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # Run the job on the latest Ubuntu image
+    runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the repository
       - name: Checkout repository
-        uses: actions/checkout@v3  # GitHub action to clone your repository
+        uses: actions/checkout@v3
 
-      # Step 2: Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'  # Specify the Node.js version compatible with Angular
+          node-version: '16'
 
-      # Step 3: Install dependencies
+      - name: List directory contents  # This step will help you verify paths
+        run: ls -R
+
       - name: Install dependencies
         run: npm install
+        working-directory: ./Testdeployment  # Adjust path as needed
 
-      # Step 4: Build the Angular project
       - name: Build Angular project
-        run: npm run build -- --prod  # Run the Angular build command for production
-
+        run: npm run build -- --prod
+        working-directory: ./Testdeployment  # Adjust path as needed
