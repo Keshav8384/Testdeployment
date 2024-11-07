@@ -23,9 +23,8 @@ jobs:
       # Step 3: Install dependencies
       - name: Install dependencies
         run: npm install
-        working-directory: ./  # Adjust the path if necessary
 
       # Step 4: Build the Angular project
       - name: Build Angular project
         run: npm run build -- --prod  # Run the Angular build command for production
-        working-directory: ./ # Adjust path if necessary
+
