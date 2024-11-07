@@ -26,8 +26,8 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: ./Testdeployment  # Adjust path based on your actual repo structure
+        working-directory:   # Adjust path based on your actual repo structure
 
       - name: Build Angular project
         run: npm run build -- --prod
-        working-directory: ./Testdeployment  # Adjust path based on your actual repo structure
+        working-directory:   # Adjust path based on your actual repo structure
